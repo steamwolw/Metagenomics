@@ -1,0 +1,10 @@
+import fileinput
+a = fileinput.input(files ='input_fasta.fasta')
+#the code is based on the theory that start codons and stop codons are conservative RNA sites
+startCodon = 'ATG'
+stopCodon = ['TAA', 'TAG', 'TGA']
+totalATG = 0
+for b in a:
+    if b.contains('ATG') and (b.contains('TAA') or b.contains('TAG') or b.contains('TGA')) :
+        totalATG = totalATG + 1
+print(totalATG)
